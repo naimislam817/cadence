@@ -2,18 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scratchpad ✦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+    <meta name="theme-color" content="#080810" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="ScratchyPad — Your AI second brain. Capture chaos. Organize brilliance." />
+    <title>ScratchyPad</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@300;400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
     <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body, #root { height: 100%; overflow: hidden; background: #06060e; }
-      ::-webkit-scrollbar { width: 3px; }
-      ::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
-      button { outline: none; }
-      input, textarea { font-family: inherit; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+      html { height: 100%; scroll-behavior: smooth; }
+      body { height: 100%; background: #080810; overflow-x: hidden; overscroll-behavior: none; cursor: none; }
+      #root { min-height: 100%; }
+      ::selection { background: rgba(201,168,76,.25); color: #f0e4c0; }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 4px; }
+      button, input, textarea { outline: none; -webkit-appearance: none; font-family: inherit; }
+      @keyframes rain-fall {
+        0% { transform: translateY(-10px) translateX(0); opacity: 0; }
+        10% { opacity: 0.6; }
+        90% { opacity: 0.3; }
+        100% { transform: translateY(100vh) translateX(-20px); opacity: 0; }
+      }
+      @keyframes float-up {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,.2); }
+        50% { box-shadow: 0 0 40px rgba(201,168,76,.5), 0 0 80px rgba(201,168,76,.15); }
+      }
+      @keyframes cursor-trail {
+        0% { opacity: 0.8; transform: scale(1); }
+        100% { opacity: 0; transform: scale(0.1); }
+      }
+      @keyframes shimmer {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      @keyframes eq-bar {
+        0%, 100% { height: 4px; }
+        50% { height: var(--h, 20px); }
+      }
+      @keyframes typewriter {
+        from { width: 0; }
+        to { width: 100%; }
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
     </style>
   </head>
   <body>
